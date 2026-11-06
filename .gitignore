@@ -1,0 +1,14 @@
+# Obsidian workspace state (per machine)
+.obsidian/
+.trash/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+
+# Claude runtime artifacts (local, never commit)
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+.claude/wip
+.claude/docs-ok
