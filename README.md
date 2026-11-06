@@ -4,8 +4,9 @@ A small, sourced knowledge base on distributed systems, written as linked
 markdown notes. It covers how machines that fail and lose messages still
 order events, agree on a value and keep copies of data in step.
 
-It is also the example knowledge base for `vademo`, an app for reading and
-editing knowledge-base repositories: open the folder to browse the notes, follow the
+It is also the example knowledge base for
+[vademo](https://github.com/carlospinto4p/vademo), an Android app for reading
+and editing knowledge-base repositories: open the folder to browse the notes, follow the
 `[[links]]`, and read the `sources/` notes behind them.
 
 ## What is in it
