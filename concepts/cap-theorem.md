@@ -4,7 +4,7 @@ type: concept
 status: draft
 tags: [cap, consistency, availability]
 created: 2026-11-06
-updated: 2026-11-06
+updated: 2026-11-07
 ---
 
 # CAP theorem
@@ -30,12 +30,32 @@ facing a partition ([[src-brewer-cap-twelve-years]]).
 authors claim strong consistency across the globe. Both are covered in their
 own notes.
 
-## Gap
+## What the proof shows
 
-The formal proof (Gilbert and Lynch, 2002) could not be read: the publisher
-returned an error and the author's copy was an unreadable scan. Nothing here
-states what the theorem proves exactly, only Brewer's description of it. The
-paper is the next thing to ingest.
+Gilbert and Lynch made the conjecture a theorem. Their terms are narrow
+([[src-gilbert-lynch-cap-proof]]):
+
+- **Consistency** is atomic (linearizable) data: "any read operation that
+  begins after a write operation completes must return that value, or the
+  result of a later write operation."
+- **Availability** is "every request received by a non-failing node in the
+  system must result in a response", with no bound on how long that takes.
+- **Partition tolerance** means the network may "lose arbitrarily many
+  messages sent from one node to another."
+
+The proof splits the nodes into two groups and loses every message between
+them. A write completes in one group; a later read in the other group must
+answer, and cannot have seen the write. So no read/write object is both
+available and atomic once messages can be lost. This holds in an
+asynchronous network and also when nodes have clocks
+([[src-gilbert-lynch-cap-proof]]).
+
+Clocks change one thing. Without them a node cannot tell a lost message from
+a slow one, so it cannot be atomic even when nothing is lost. With them, a
+system can be atomic whenever every message arrives, and return stale data
+only while messages are being lost ([[src-gilbert-lynch-cap-proof]]). My
+reading: this fits Brewer's later point, above, that a partition is in
+practice a time bound on communication.
 
 ## Related
 
