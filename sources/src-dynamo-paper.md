@@ -4,9 +4,9 @@ type: source
 status: draft
 tags: [replication, availability]
 created: 2026-11-06
-updated: 2026-11-06
+updated: 2026-11-07
 url: https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf
-publisher: Amazon.com (SOSP 2007; venue is from memory, unverified)
+publisher: ACM, Proceedings of the 21st ACM Symposium on Operating Systems Principles (SOSP '07), Stevenson, Washington, October 14-17, 2007
 author: Giuseppe DeCandia, Deniz Hastorun, Madan Jampani, Gunavardhan Kakulapati, Avinash Lakshman, Alex Pilchin, Swaminathan Sivasubramanian, Peter Vosshall, Werner Vogels
 published: 2007
 read: 2026-11-06
@@ -54,5 +54,9 @@ quorum values to trade latency against consistency.
 
 Written by Amazon's engineers about their own production system, so it is
 strong on design and weak on independent measurement. The PDF carries no
-venue or date in the extracted text; the year 2007 and the SOSP venue are
-from memory (unverified) and should be checked against the proceedings.
+venue or date in the extracted text. Venue and dates come from Werner Vogels's
+post announcing the paper, which gives the reference and the ACM copyright
+line "SOSP'07, October 14–17, 2007, Stevenson, Washington, USA"
+([All Things Distributed](https://www.allthingsdistributed.com/2007/10/amazons_dynamo.html),
+checked 2026-11-07). The ACM and dblp pages refused automated access, so the
+page range and DOI are not recorded.

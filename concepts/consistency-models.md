@@ -4,7 +4,7 @@ type: concept
 status: draft
 tags: [consistency]
 created: 2026-11-06
-updated: 2026-11-06
+updated: 2026-11-07
 ---
 
 # Consistency models
@@ -29,9 +29,11 @@ safety property which declares what a system can do" ([[src-jepsen-consistency-m
 - **Eventual consistency** is what [[dynamo]] provides: updates "propagated to
   all replicas asynchronously" ([[src-dynamo-paper]]), with conflicts left to
   the application.
-- **External consistency** is what [[spanner]]'s authors claim for its
-  distributed transactions ([[src-spanner-abstract]]). Their abstract does not
-  define it, so this note does not either.
+- **External consistency** is what [[spanner]] provides for its distributed
+  transactions. Its paper calls it equivalent to linearizability and defines
+  it by commit order: "if a transaction T1 commits before another transaction
+  T2 starts, then T1's commit timestamp is smaller than T2's"
+  ([[src-spanner-paper]]).
 
 ## Gap
 
